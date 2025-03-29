@@ -54,6 +54,8 @@ class DehazeModel:
         img_tensor = tf.convert_to_tensor(img_array, dtype=tf.float32) / 255.0
         img_tensor = tf.image.resize(img_tensor, (224, 224))
         return tf.expand_dims(img_tensor, axis=0)  # Add batch dimension
+    
+    
 
     def predict(self, img_tensor):
         """
